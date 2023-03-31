@@ -1,6 +1,6 @@
 Name:		texlive-jkmath
 Version:	47109
-Release:	1
+Release:	2
 Summary:	Macros for mathematics that make the code more readable
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/jkmath
