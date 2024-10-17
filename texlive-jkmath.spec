@@ -3,7 +3,7 @@ Version:	47109
 Release:	2
 Summary:	Macros for mathematics that make the code more readable
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/jkmath
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/jkmath
 License:	lppl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jkmath.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jkmath.doc.r%{version}.tar.xz
