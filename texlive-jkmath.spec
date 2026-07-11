@@ -1,38 +1,22 @@
-Name:		texlive-jkmath
-Version:	47109
-Release:	2
+%global tl_name jkmath
+%global tl_revision 47109
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.1
+Release:	%{tl_revision}.1
 Summary:	Macros for mathematics that make the code more readable
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/jkmath
 License:	lppl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jkmath.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jkmath.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jkmath.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jkmath.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Inspired by the physicspackage on CTAN, the package defines
-some simple macros for mathematical notation which make the
-code more readable and/or allow flexibility in typesetting
-material.
+Inspired by the physicspackage on CTAN, the package defines some simple
+macros for mathematical notation which make the code more readable
+and/or allow flexibility in typesetting material.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/jkmath
-%doc %{_texmfdistdir}/doc/latex/jkmath
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
